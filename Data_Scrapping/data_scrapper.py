@@ -146,3 +146,7 @@ for a in all_games:
                  '_developer':Developer})      
 
         driver.back()
+        
+df = pd.DataFrame(games)
+
+df.to_csv(r'C:\Users\harsh\Desktop\Extracted_Games.csv',index = False)
