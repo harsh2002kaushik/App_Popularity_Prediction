@@ -27,9 +27,6 @@ app.layout = html.Div(
                     }
                 ),
         html.Hr(),
-        html.P('editors_choice'),
-        dcc.Input(id='editors_choice', type='text', placeholder='editors_choice'),
-        html.Hr(),
         html.P('game_types'),
         dcc.Input(id='game_types', type='text', placeholder='game_types'),
         html.Hr(),
