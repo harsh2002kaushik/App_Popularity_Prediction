@@ -32,8 +32,8 @@ tree_search = GridSearchCV(tree_clf,tree_params,scoring='accuracy')        # mak
 tree_search.fit(X_train,Y_train)
 tree_best_params = tree_search.best_params_
 tree_optimized = tree.DecisionTreeClassifier(criterion = tree_best_params['criterion'], max_depth = tree_best_params['max_depth'])
-tree_optimized.fit(X_train,Y_train
-print(tree_optimized.score(X_test,Y_test)
+tree_optimized.fit(X_train,Y_train)
+print(tree_optimized.score(X_test,Y_test))
 
 dot_data = export_graphviz(tree_optimized,feature_names=X.columns,filled=True)
 graphviz.Source(dot_data)
@@ -68,3 +68,7 @@ from sklearn import ensemble
 rf = ensemble.RandomForestClassifier()
 rf.fit(X_train, Y_train)
 print(rf.score(X_test,Y_test))
+
+import pickle 
+with open('model.pkl', 'wb') as f:
+    pickle.dump(rf, f)
