@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
+import pickle
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv('./drive/My Drive/Final_games.csv')
+df = pd.read_csv('.EDA_games/Final_games.csv')
 print(df.head())
 
 df['game_types'] = LabelEncoder().fit_transform(df['game_types'])
